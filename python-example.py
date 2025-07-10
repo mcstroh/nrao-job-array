@@ -17,7 +17,7 @@ def run_iteration(iteration: list) -> None:
     iteration_string = f'{iteration:05d}' # For simplifying names for large iterations
 
     # Look-up the process-id and create a new working directory in tmp for this run.
-    working_directory = TEMPORARY_PATH / f'{SCRIPT_PATH.stem}-{os.getpid()}'
+    working_directory = TEMPORARY_PATH / f'{SCRIPT_PATH.stem}-{os.uname().nodename}-{os.getpid()}'
 
     working_directory.mkdir(parents=True, exist_ok=False)
     working_file = working_directory / f'{iteration}.txt'
@@ -42,9 +42,10 @@ def run_iteration(iteration: list) -> None:
 def main():
 
     parser = argparse.ArgumentParser(prog=f'casa -c {SCRIPT_PATH} iteration',
-                                     description='Run tclean using the proper arguments.')
+                                     description='Run this scipt for a particular '
+                                                 'piece of phase space.')
     parser.add_argument('iteration', type=int, nargs=1, default=None,
-                        help='Version of tclean to run.')
+                        help='Version to run.')
 
     try:
         args = parser.parse_args()

@@ -3,7 +3,7 @@ import os
 from pathlib import Path
 import shutil
 
-PROJECT_PATH = Path(Path.home(), 'lustre/projects/slurm-job-array-test')
+PROJECT_PATH = Path(Path.home(), 'lustre/projects/slurm-job-array')
 SCRIPT_PATH = PROJECT_PATH / 'python-example.py'
 TEMPORARY_PATH = Path(Path.home(), 'lustre/tmp')
 
@@ -57,4 +57,5 @@ def main():
 
 
 if __name__=='__main__':
+
     main()

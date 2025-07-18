@@ -2,9 +2,10 @@ import argparse
 import os
 from pathlib import Path
 import shutil
+import sys
 
 PROJECT_PATH = Path(Path.home(), 'lustre/projects/slurm-job-array')
-SCRIPT_PATH = PROJECT_PATH / 'python-example.py'
+SCRIPT_PATH = PROJECT_PATH / sys.argv[0]
 TEMPORARY_PATH = Path(Path.home(), 'lustre/tmp')
 
 # Where final data will be stored from the job array.

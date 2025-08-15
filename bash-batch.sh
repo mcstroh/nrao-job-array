@@ -18,7 +18,7 @@ cd ${TEMP_DIRECTORY}
 #python python-example.py "${1}"
 
 # For running within CASA
-CASAPATH="/home/casa/packages/RHEL8/release/current"
+CASAPATH="/home/casa/packages/RHEL8/release/casa-6.7.0-31-py3.12.el8-2"
 # This next line is for debugging to see the full command being run, and can be commented out.
 echo "xvfb-run -d ${CASAPATH}/bin/mpicasa ${CASAPATH}/bin/casa --nogui -c ${PROJECT_DIRECTORY}/python-example.py ${1}"
 xvfb-run -d ${CASAPATH}/bin/mpicasa ${CASAPATH}/bin/casa --nogui -c "${PROJECT_DIRECTORY}/python-example.py" "${1}"
